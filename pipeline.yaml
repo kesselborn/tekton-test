@@ -10,6 +10,9 @@ spec:
     - name: docker-image
       type: image
   tasks:
+    - name: hello
+      taskRef:
+        name: hello
     - name: build-docker-image
       taskRef:
         name: build-docker-image

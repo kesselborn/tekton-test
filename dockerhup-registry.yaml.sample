@@ -1,0 +1,9 @@
+---
+ uncomment and fill in dockerconfigjson
+apiVersion: v1
+data:
+  .dockerconfigjson: # echo '{ "auths": {"index.docker.io": {"username":"<username>", "password":"<password>"}} }'|base64
+kind: Secret
+metadata:
+  name: dockerhub
+type: kubernetes.io/dockerconfigjson

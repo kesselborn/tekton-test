@@ -21,10 +21,10 @@ spec:
       resources:
         inputs:
           - name: src
-            resource: http-fs-git
+            resource: git-repo
         outputs:
           - name: builtImage
-            resource: http-fs-image
+            resource: docker-image
 #    - name: deploy
 #      taskRef:
 #        name: deploy-using-kubectl

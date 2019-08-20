@@ -2,8 +2,9 @@
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineRun
 metadata:
-  name: http-fs-run-1
+  name: http-fs-run-16
 spec:
+  serviceAccount: tekton-runner
   pipelineRef:
     name: http-fs
   resources:

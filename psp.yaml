@@ -1,4 +1,9 @@
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tekton-dashboard
+---
 # adjust the psp to your needs
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy

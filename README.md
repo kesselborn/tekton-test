@@ -1,0 +1,7 @@
+- `s4 create-ns tekton-pipelines`
+  - install tiller as noted
+- `kubectl apply --filename https://github.com/tektoncd/dashboard/releases/latest/download/release.yaml`
+- `cat 00*.yaml|kubectl apply -f -`
+- `cat *.yaml|kubectl apply -f -`
+- `kubectl -n tekton-pipelines port-forward svc/tekton-dashboard 8080:9097`
+- `open http://localhost:8080`

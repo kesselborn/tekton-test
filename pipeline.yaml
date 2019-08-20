@@ -1,0 +1,45 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: http-fs
+spec:
+  resources:
+    - name: git-repo
+      type: git
+    - name: docker-image
+      type: image
+  tasks:
+    - name: build-docker-image
+      taskRef:
+        name: build-docker-image
+#     params:
+#       - name: pathToDockerFile
+#         value: /workspace/src/Dockerfile
+#       - name: pathToContext
+#         value: /workspace/src/
+      resources:
+        inputs:
+          - name: src
+            resource: http-fs-git
+        outputs:
+          - name: builtImage
+            resource: http-fs-image
+#    - name: deploy
+#      taskRef:
+#        name: deploy-using-kubectl
+#      resources:
+#        inputs:
+#          - name: src
+#            resource: http-fs-git
+#          - name: image
+#            resource: http-fs-image
+#            from:
+#              - build-skaffold-web
+#      params:
+#        - name: path
+#          value: /workspace/src/deployment.yaml
+#        - name: yqArg
+#          value: "-d1"
+#        - name: yamlPathToImage
+#          value: "spec.template.spec.containers[0].image"

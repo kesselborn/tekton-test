@@ -1,0 +1,15 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  name: http-fs-run-1
+spec:
+  pipelineRef:
+    name: http-fs
+  resources:
+    - name: git-repo
+      resourceRef:
+        name: http-fs-git
+    - name: docker-image
+      resourceRef:
+        name: http-fs-image

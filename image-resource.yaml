@@ -1,0 +1,10 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: http-fs-image
+spec:
+  type: image
+  params:
+    - name: url
+      value: gitlabregistry.innoq.com/daniel/tekton-test/http-fs

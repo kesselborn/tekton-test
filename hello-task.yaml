@@ -12,3 +12,10 @@ spec:
       args:
         - -c
         - echo "hello"
+    - name: echo2
+      image: alpine
+      command:
+        - /bin/sh
+      args:
+        - -c
+        - echo "hello2"
